@@ -20,7 +20,7 @@ end
 function M.prepend_char_to_statusline(char)
   prefix_hl_group = get_first_highlight_group(original_statusline)
   -- 在开头插入带高亮的字符
-  local new_statusline = "%#" .. prefix_hl_group .. "#" .. char .. " " .. original_statusline
+  local new_statusline = "%#" .. prefix_hl_group .. "#" .. char .. "" .. string.sub(original_statusline, 2, #original_statusline)
   -- 设置新的 statusline
   -- vim.o.statusline = new_statusline
   local current_win = vim.api.nvim_get_current_win()
