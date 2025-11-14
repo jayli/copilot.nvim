@@ -629,7 +629,7 @@ function! s:flush()
   call s:loading_stop()
   try
     call CancelCopilotComplete()
-  catch /117/
+  catch
     " silent! noa UpdateRemotePlugins
     " call CancelCopilotComplete()
   endtry
